@@ -7,10 +7,9 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
-    if (message.content === 'السلام عليكم') {
-    	message.reply('عليكم السلام :heart:');
+    if (message.content === 'hla') {
+    	message.reply('hla fek :heart:');
   	}
 });
 
-// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
