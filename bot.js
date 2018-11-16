@@ -34,28 +34,6 @@ if(!message.channel.guild) return;
 });
  
 
-client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-    if (!args[1]) {
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
-        });
-    }
-    } else {
-        return;
-    }
-});
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setAuthor(member.user.username, member.user.avatarURL)
@@ -86,20 +64,25 @@ if (!channel) return;
 channel.send({embed : embed});
 });
 
- client.on('message', msg => {
-	var prefix = '%';
-	if(msg.content.startsWith(prefix + 'server')) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(msg.guild.iconURL)
-.addField('Server Name', msg.guild.name, true)
-.addField('Server ID', msg.guild.id, true)
-.addField('Server MemberCount', msg.guild.memberCount, true)
-.addField('Server Owner', msg.guild.owner, true)
-.addField('Server Channels', msg.guild.channels.size, true)
-.addField('Server Roles', msg.guild.roles.size, true)
-msg.channel.sendEmbed(embed);
-	}
-});
+
+client.on('message', async function (message)  {
+if(message.content.startsWith(prefix+"server")) {
+const vlevel = ['None', 'Low (Must have verified email)', 'Medium (Must be register for 5 mineuts)', 'High (Need to wait 10 minutes)', 'Very High (Need verified phone on account)']
+const members = await message.guild.members.filter(m=> m.presence.status === 'online').size + message.guild.members.filter(m=> m.presence.status === 'idle').size + message.guild.members.filter(m=> m.presence.status === 'dnd').size  
+message.channel.send(new discord.RichEmbed() 
+.setAuthor(`${message.guild.name} [Server Icon URL]`, message.guild.iconURL)
+.setURL(message.guild.iconURL)
+.addField('🆔 ايدي السيرفر', message.guild.id, true)
+.addField('👑 اونر السيرفر', message.guild.owner, true)
+.addField('🗺 منطقة', message.guild.region, true)
+.addField(`👥 الاعضاء [${message.guild.memberCount}]`, `${members} online` ,true)
+.addField(`💬 القنوات`, `**${message.guild.channels.filter(c => c.type === 'category').size}** الاقسام | **${message.guild.channels.filter(c=> c.type === 'text').size}**روم كتابي | **${message.guild.channels.filter(c=> c.type === 'voice').size}** روم صوتي` ,true)
+.addField(`💠 مستوى التحقق`, vlevel[message.guild.verificationLevel] ,true)
+.addField(`👔 الرتب`, message.guild.roles.size ,true)
+.addField(`📆 تم انشأوها`, message.guild.createdAt ,true)
+)
+}
+})
 
 client.on('message', message => {
    if (message.content === "%id") {
