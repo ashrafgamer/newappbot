@@ -33,11 +33,6 @@ if(!message.channel.guild) return;
   }
 });
  
-if (message.content.startsWith('%bc')) {
-          if (!args[0]) {
-message.channel.send("**%bc <message>**");
-return;
-}
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
