@@ -29,7 +29,7 @@ if(!message.channel.guild) return;
 });
  
 client.on('ready', () => {                           
-client.user.setGame(`"%help"`,'https://www.twitch.tv/wlccccc');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`-help | On 20 Servers`,'https://www.twitch.tv/v5bz');
+client.user.setGame(`"%help%`,'https://www.twitch.tv/tarikrs');                                                                                                                                                                                                                                                                                                                                                                                                              client.user.setGame(`-help | On 20 Servers`,'https://www.twitch.tv/v5bz');
 });          
 
 
