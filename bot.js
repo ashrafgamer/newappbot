@@ -30,6 +30,8 @@ if(!message.channel.guild) return;
       .setColor(000000)
       .setImage(`${client.avatarURL}`)
     message.channel.sendEmbed(embed);
+   .setFooter('X-Bot', 'https://cdn.discordapp.com/avatars/512898000088203274/a551b545cad7360bbdf9fb138db31297.png?size=2048')
+
   }
 });
  
