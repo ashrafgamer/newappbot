@@ -91,13 +91,12 @@ channel.send({embed : embed});
 	if(msg.content.startsWith(prefix + 'server')) {
 let embed = new Discord.RichEmbed()
 .setThumbnail(msg.guild.iconURL)
-.addField('Guild Name', msg.guild.name, true)
-.addField('Guild ID', msg.guild.id, true)
-.addField('Guild MemberCount', msg.guild.memberCount, true)
-.addField('Guild Owner', msg.guild.owner, true)
-.addField('Guild Channels', msg.guild.channels.size, true)
-.addField('Guild Roles', msg.guild.roles.size, true)
-.addField('Guild Afk Room', msg.guild.afkChannel, true)
+.addField('Server Name', msg.guild.name, true)
+.addField('Server ID', msg.guild.id, true)
+.addField('Server MemberCount', msg.guild.memberCount, true)
+.addField('Server Owner', msg.guild.owner, true)
+.addField('Server Channels', msg.guild.channels.size, true)
+.addField('Server Roles', msg.guild.roles.size, true)
 msg.channel.sendEmbed(embed);
 	}
 });
