@@ -87,7 +87,7 @@ channel.send({embed : embed});
 });
 
  client.on('message', msg => {
-	var prefix = '!';
+	var prefix = '%';
 	if(msg.content.startsWith(prefix + 'server')) {
 let embed = new Discord.RichEmbed()
 .setThumbnail(msg.guild.iconURL)
