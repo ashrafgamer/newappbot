@@ -101,7 +101,16 @@ msg.channel.sendEmbed(embed);
 	}
 });
 
+ const Discord = require("discord.js");
+const client = new Discord.Client();
+client.on("message", message => {
+    var prefix = "%";
  
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **لا يوجد لديك صلاحية لمسح الشات**');
+        var msg;
+        msg = parseInt();
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
