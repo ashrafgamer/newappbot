@@ -78,7 +78,6 @@ client.on('guildMemberRemove', member => {
     .setTitle(`خرج عضو`)
     .setDescription(`الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setbust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RED')
     .setFooter(`X-Bot`, 'https://cdn.discordapp.com/avatars/512898000088203274/a551b545cad7360bbdf9fb138db31297.png?size=2048')
 
