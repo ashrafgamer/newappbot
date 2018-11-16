@@ -11,7 +11,7 @@ client.on('message', message => {
   	}
 });
 
-client.on('ready', () => { client.user.setGame(``,'https://www.twitch.tv/tarikrs'); 
+client.on('ready', () => {
 client.user.setGame(`"%help"`,'https://www.twitch.tv/v5bz'); 
 }); 
 
