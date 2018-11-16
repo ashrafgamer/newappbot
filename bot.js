@@ -28,6 +28,10 @@ if(!message.channel.guild) return;
   }
 });
  
+client.on('ready', () => {                           
+client.user.setGame(`"%help"`,'https://www.twitch.tv/wlccccc');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`-help | On 20 Servers`,'https://www.twitch.tv/v5bz');
+});          
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
