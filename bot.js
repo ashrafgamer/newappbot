@@ -11,11 +11,6 @@ client.on('message', message => {
   	}
 });
 
-client.on('message', message => {
-    if (message.content === '%bc') {
-    	message.reply('%bc {الرسالة}');
- 
-});
 
 client.on('ready', () => {
 client.user.setGame(`"%help"`,'https://www.twitch.tv/v5bz'); 
