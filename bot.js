@@ -11,21 +11,6 @@ client.on('message', message => {
   	}
 });
  
-client.on('message', msg => {
-
-    if (msg.content == '%join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('white_check_mark'));
-     }
-    }
-}
-})
-client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("513223272247328789").join(); //by :n3k4a 
-    });
-
 
 client.on('ready', () => {
 client.user.setGame(`"%help"`,'https://www.twitch.tv/wlccc'); 
