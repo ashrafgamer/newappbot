@@ -142,5 +142,15 @@ client.on('message', message => {
         }
     });
 
+client.on('message', message => {
+    if (message.content === "%roles") {
+        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
+        const embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .addField('الرتب:',`**[${roles}]**`)
+        message.channel.sendEmbed(embed);
+    }
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
