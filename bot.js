@@ -15,6 +15,7 @@ client.on('message', message => {
   if (message.content === '%help') {
       
     message.author.send(`
+```
 ×=======================================×
              "prefix -> (%)"
 ×=======================================×
@@ -35,6 +36,7 @@ client.on('message', message => {
 Bot By | AsHraF#4347
 
 ×=======================================×
+```
 `);
     message.react('✉');
   }
