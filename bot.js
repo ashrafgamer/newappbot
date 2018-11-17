@@ -14,7 +14,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.content === '%help') {
       
-    message.author.send(`
+    message.author.send(`t
 ×=======================================×
              "prefix -> (%)"
 ×=======================================×
