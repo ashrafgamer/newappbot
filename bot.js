@@ -11,6 +11,20 @@ client.on('message', message => {
   	}
 });
  
+client.on('message', message => {
+  if (message.content === '%help') {
+      
+    message.author.send(`هيلبي
+1a
+2
+3s
+4
+5d
+6
+الخ. `);
+    message.react('✉');
+  }
+});
 
 client.on('ready', () => {
 client.user.setGame(`"%help"`,'https://www.twitch.tv/wlccc'); 
