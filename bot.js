@@ -13,7 +13,7 @@ client.on('message', message => {
  
 client.on('message', msg => {
 
-    if (msg.content == '$join') {
+    if (msg.content == '%join') {
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
