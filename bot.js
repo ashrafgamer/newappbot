@@ -10,9 +10,6 @@ client.on('message', message => {
     	message.reply('pong');
   	}
 });
-
-@everyone  
-
  
 client.on('message', msg => {
 
